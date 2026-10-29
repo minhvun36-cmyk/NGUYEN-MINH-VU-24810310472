@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using HotelManagement.DAL;
+
+namespace HotelManagement.BUS
+{
+    public class PhongBUS
+    {
+        PhongDAL dal = new PhongDAL();
+
+        public DataTable LayDanhSachPhong()
+        {
+            return dal.LayDanhSachPhong();
+        }
+    }
+}
