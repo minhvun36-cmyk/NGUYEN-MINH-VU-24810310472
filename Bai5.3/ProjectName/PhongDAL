@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using MySql.Data.MySqlClient;
+
+namespace HotelManagement.DAL
+{
+    public class PhongDAL
+    {
+        public DataTable LayDanhSachPhong()
+        {
+            using (MySqlConnection conn = Database.GetConnection())
+            {
+                string sql = "SELECT * FROM Phong";
+
+                MySqlDataAdapter da =
+                    new MySqlDataAdapter(sql, conn);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+    }
+}
